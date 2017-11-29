@@ -27,10 +27,10 @@ function alphabits(text) {
 
 function palindrome(text) {
     if(isPalindrome(text)){
-        print("Your string is a palindrome!");
-    } 
-    
-
+        print(`${text} is a palindrome.`);
+    } else {
+        print(`${text} is not a palindrome.`);
+    }
 }
 
 function isPalindrome(text){
@@ -46,7 +46,7 @@ function isPalindrome(text){
         offSet = 1;
         centerOfWord = ((wordLength) / 2)+offSet;
     }
-    
+
     if(textArray.slice(0, centerOfWord-offSet).join("") === textArray.slice(centerOfWord, textArray.length+1).reverse().join("")){
         return true;
     }
