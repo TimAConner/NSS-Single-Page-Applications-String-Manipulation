@@ -18,8 +18,12 @@ function reversal(text) {
     print(textArray);
 }
 
-function alphabits() {
-
+function alphabits(text) {
+    let textArray = text.toLowerCase().split("");
+    textArrray = textArray.sort();
+    console.log(textArray);
+    textArray = textArray.join(" ");
+    print(textArray);
 }
 
 function palindrome() {
