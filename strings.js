@@ -21,13 +21,37 @@ function reversal(text) {
 function alphabits(text) {
     let textArray = text.toLowerCase().split("");
     textArrray = textArray.sort();
-    console.log(textArray);
     textArray = textArray.join(" ");
     print(textArray);
 }
 
-function palindrome() {
+function palindrome(text) {
+    if(isPalindrome(text)){
+        print("Your string is a palindrome!");
+    } 
+    
 
+}
+
+function isPalindrome(text){
+    let textArray = text.toLowerCase().split("");
+    let wordLength = textArray.length;
+    let centerOfWord;
+    let offSet;
+
+    if(wordLength % 2 === 0){//Word has even amount of characters
+        offSet = 0;
+        centerOfWord = ((wordLength + 1) / 2);
+    } else {//Word has odd amount of characters
+        offSet = 1;
+        centerOfWord = ((wordLength) / 2)+offSet;
+    }
+    
+    if(textArray.slice(0, centerOfWord-offSet).join("") === textArray.slice(centerOfWord, textArray.length+1).reverse().join("")){
+        return true;
+    }
+
+    return false;
 }
 
 function print(text){
