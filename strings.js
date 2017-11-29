@@ -14,14 +14,14 @@ function activateButton(){
 function reversal(text) {
     let textArray = text.split("");
     textArray = textArray.reverse();
-    textArray = textArray.join(" ");
+    textArray = textArray.join("");
     print(textArray);
 }
 
 function alphabits(text) {
     let textArray = text.toLowerCase().split("");
     textArrray = textArray.sort();
-    textArray = textArray.join(" ");
+    textArray = textArray.join("");
     print(textArray);
 }
 
@@ -36,19 +36,19 @@ function palindrome(text) {
 function isPalindrome(text){
     let textArray = text.toLowerCase().split("");
     let wordLength = textArray.length;
-    let centerOfWord;
+    let halfOfWord;
     let offSet;
 
     if(wordLength % 2 === 0){//Word has even amount of characters
         offSet = 0;
-        centerOfWord = ((wordLength + 1) / 2);
+        halfOfWord = ((wordLength + 1) / 2);
     } else {//Word has odd amount of characters
         offSet = 1;
-        centerOfWord = ((wordLength) / 2)+offSet;
+        halfOfWord = ((wordLength) / 2)+offSet;
     }
 
-    let firstHalf = textArray.slice(0, centerOfWord-offSet).join("");
-    let secondHalf = textArray.slice(centerOfWord, textArray.length+1).reverse().join("");
+    let firstHalf = textArray.slice(0, halfOfWord-offSet).join("");
+    let secondHalf = textArray.slice(halfOfWord, textArray.length+1).reverse().join("");
     if(firstHalf === secondHalf){
         return true;
     }
