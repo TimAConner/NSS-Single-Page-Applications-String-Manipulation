@@ -47,7 +47,9 @@ function isPalindrome(text){
         centerOfWord = ((wordLength) / 2)+offSet;
     }
 
-    if(textArray.slice(0, centerOfWord-offSet).join("") === textArray.slice(centerOfWord, textArray.length+1).reverse().join("")){
+    let firstHalf = textArray.slice(0, centerOfWord-offSet).join("");
+    let secondHalf = textArray.slice(centerOfWord, textArray.length+1).reverse().join("");
+    if(firstHalf === secondHalf){
         return true;
     }
 
